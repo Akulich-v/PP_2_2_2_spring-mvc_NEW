@@ -22,14 +22,8 @@ public class CarController {
     }
 
     @GetMapping(value = "/cars")
-    public String printCars(ModelMap cars) {
-        cars.addAttribute("cars",carDAO.index());
-        return "cars";
-    }
-
-    @GetMapping(value = "/cars/{count}")
-    public String printCars(@RequestParam(name = "count", required = false, defaultValue = "0") int count,ModelMap cars ) {
-        cars.addAttribute("cars", carDAO.carCount(count));
+    public String printCars(@RequestParam(name = "count", required = false) Integer count,ModelMap cars ) {
+        cars.addAttribute("cars", carDAO.index(count));
         return "cars";
     }
 }

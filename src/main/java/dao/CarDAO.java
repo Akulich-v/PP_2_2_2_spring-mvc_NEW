@@ -19,11 +19,10 @@ public class CarDAO {
         cars.add(new Car(++CARS_COUNT,"Jac","P887MM"));
     }
 
-    public List<Car> index() {
+    public List<Car> index(Integer count) {
+        if (count != null) {
+            return cars.stream().filter(car -> car.getId() <= count).collect((Collectors.toList()));
+        }
         return cars;
-    }
-
-    public List<Car> carCount (int count) {
-        return cars.stream().filter(car -> car.getId() <= count).collect((Collectors.toList()));
     }
 }
