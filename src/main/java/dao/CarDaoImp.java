@@ -12,13 +12,14 @@ import java.util.stream.Collectors;
 public class CarDaoImp implements CarDao {
     private static int carsCount;
     private List<Car> cars;
+
     {
         cars = new ArrayList<>();
-        cars.add(new Car(++carsCount,"BMW","Y255VC"));
-        cars.add(new Car(++carsCount,"Volvo","F432GH"));
-        cars.add(new Car(++carsCount,"Mers","R345HB"));
-        cars.add(new Car(++carsCount,"YAZ","N456FG"));
-        cars.add(new Car(++carsCount,"Jac","P887MM"));
+        cars.add(new Car(++carsCount, "BMW", "Y255VC"));
+        cars.add(new Car(++carsCount, "Volvo", "F432GH"));
+        cars.add(new Car(++carsCount, "Mers", "R345HB"));
+        cars.add(new Car(++carsCount, "YAZ", "N456FG"));
+        cars.add(new Car(++carsCount, "Jac", "P887MM"));
     }
 
     public List<Car> getCars(Integer count) {

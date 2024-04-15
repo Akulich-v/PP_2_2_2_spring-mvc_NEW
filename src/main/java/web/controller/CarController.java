@@ -12,13 +12,14 @@ import service.CarServiceImp;
 public class CarController {
 
     private CarServiceImp carServiceImp;
+
     @Autowired
     public CarController(CarServiceImp carServiceImp) {
         this.carServiceImp = carServiceImp;
     }
 
     @GetMapping(value = "/cars")
-    public String printCars(@RequestParam(name = "count", required = false) Integer count,ModelMap cars ) {
+    public String printCars(@RequestParam(name = "count", required = false) Integer count, ModelMap cars) {
         cars.addAttribute("cars", carServiceImp.getCars(count));
         return "cars";
     }
